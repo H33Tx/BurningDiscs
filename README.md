@@ -16,6 +16,16 @@ For uploading ZIPs you need a Anonfiles API key. Instructions will show on the s
 
 If you still have any questions, create an Issue.
 
+# Functions
+
+- Add Disc
+- View Disc
+- Download File
+- Login
+- Signup
+- Search
+- Comment
+
 # Credits
 Please credit the People who made this software properly by NOT removing the footer. I know, it doesn't look very nice but at least it's good.
 
