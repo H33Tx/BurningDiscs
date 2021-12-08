@@ -2,7 +2,7 @@
 
 // You can edit this stuff
 $config["name"] = "BurningDiscs"; // Page Title
-$config["url"] = "http://localhost/"; // Main Domain, like "domain.com/" WITH SLASH ENDING!!
+$config["url"] = "https://burningdiscs.h33t.moe/"; // Main Domain, like "domain.com/" WITH SLASH ENDING!!
 $config["folder"] = ""; // If inside subfolder (like domain.com/discs/), then it is "discs/" WITH SLASH!!
 $config["description"] = "BurningDiscs is your place to donload Lists of Tracks pre-made for you to instantly burn them on a Disc after downloading. You can save Discs to your facourites by logging in or signing up."; // SEO Description
 $config["tags"] = "music, music piracy, 1337x, music ddl, burning discs, disc, free music download"; // SEO Tags
