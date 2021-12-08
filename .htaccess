@@ -1,0 +1,18 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^home/?$ ?page=home
+RewriteRule ^all/([0-9])/?(.*)/?$ ?page=all&pagination=$1&order=$2
+RewriteRule ^new/?$ ?page=new
+RewriteRule ^disc/(.*)/?$ ?page=disc&id=$1
+RewriteRule ^search/(.*)/(.*)/?$ ?page=search&for=$1&pagination=$2
+RewriteRule ^login/?$ ?page=login
+RewriteRule ^logout/?$ ?page=logout
+RewriteRule ^signup/?$ ?page=signup
+RewriteRule ^user/comments/?(.*)/?$ ?page=comments&pagination=$1
+RewriteRule ^user/favourites/?(.*)/?$ ?page=favourites&pagination=$1
+RewriteRule ^user/uploads/?(.*)/?$ ?page=uploads&pagination=$1
+RewriteRule ^user/token/?$ ?page=token
