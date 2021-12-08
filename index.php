@@ -64,7 +64,7 @@ if($rPage=="logout") {
                 <ul class="nav navbar-nav navbar-right">
                     <form class="navbar-form navbar-left" method="post" name="quicsearch" action="">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="disc_name" placeholder="What Discin the shelf?">
+                            <input type="text" class="form-control" name="disc_name" placeholder="What Disc in the shelf?">
                         </div>
                         <button type="submit" class="btn btn-default" name="quicsearch">Search!</button>
                     </form>
@@ -107,7 +107,7 @@ if($rPage=="logout") {
                     <div class="panel-body">
                         <form class="" method="post" name="quicsearch" action="">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="disc_name" placeholder="What Discin the shelf?">
+                                <input type="text" class="form-control" name="disc_name" placeholder="What Disc in the shelf?">
                             </div>
                             <button type="submit" class="btn btn-success" style="width:100%" name="quicsearch">Search!</button>
                         </form>
