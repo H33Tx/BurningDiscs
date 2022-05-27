@@ -1,6 +1,10 @@
 <?php
 
-$order = $_GET["order"];
+if(empty($_GET["order"])) {
+    $order = "id-asc";
+} else {
+    $order = mysqli_real_escape_string($conn, $_GET["order"]);
+}
 if($order=="name-desc") {
     $dream = 'SELECT * FROM `discs` ORDER BY `name` DESC LIMIT ?,?';
 } elseif($order=="id-asc") {

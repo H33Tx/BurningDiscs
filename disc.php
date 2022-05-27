@@ -1,6 +1,6 @@
 <?php
 
-$discID = $_GET["id"];
+$discID = mysqli_real_escape_string($conn, $_GET["id"]);
 $disc = $conn->query("SELECT * FROM `discs` WHERE `id`='$discID' LIMIT 1");
 $disc = mysqli_fetch_assoc($disc);
 

@@ -1,7 +1,7 @@
 <?php
 
 // Update Token
-if(isset($_POST["update_token"])) {
+if(isset($_POST["update_token"]) && isset($_SESSION["username"])) {
     $token = mysqli_real_escape_string($conn, $_POST["user_token"]);
     $user = $uID;
     $conn->query("UPDATE `users` SET `api`='$token' WHERE `id`='$user' LIMIT 1");
@@ -9,7 +9,7 @@ if(isset($_POST["update_token"])) {
 }
 
 // Delete Disc Function
-if(isset($_POST["delete_disc"])) {
+if(isset($_POST["delete_disc"]) && isset($_SESSION["username"])) {
     $disc = mysqli_real_escape_string($conn, $_POST["disc_id"]);
     $conn->query("DELETE FROM `discs` WHERE `id`='$disc' LIMIT 1");
     $conn->query("DELETE FROM `favourites` WHERE `disc`='$disc'");
@@ -18,7 +18,7 @@ if(isset($_POST["delete_disc"])) {
 }
 
 // Edit Disc Function
-if(isset($_POST["edit_disc"])) {
+if(isset($_POST["edit_disc"]) && $_SESSION["username"]) {
     $disc_id = mysqli_real_escape_string($conn, $_POST["disc_id"]);
     $disc_name = mysqli_real_escape_string($conn, $_POST["disc_name"]);
     $disc_desc = mysqli_real_escape_string($conn, $_POST["disc_desc"]);
@@ -27,7 +27,7 @@ if(isset($_POST["edit_disc"])) {
 }
 
 // Add Disc Function
-if(isset($_POST["add_disc"])) {
+if(isset($_POST["add_disc"]) && isset($_SESSION["username"])) {
     $file = $_FILES["disc_zip"];
     move_uploaded_file($file["tmp_name"], "discs/" . $file["name"]);
     $anonfile = $file["name"];
@@ -63,7 +63,7 @@ if(isset($_POST["add_disc"])) {
 }
 
 // Delete Comment
-if(isset($_POST["delete_comment"])) {
+if(isset($_POST["delete_comment"]) && isset($_SESSION["username"])) {
     $disc = mysqli_real_escape_string($conn, $_POST["disc"]);
     $user = mysqli_real_escape_string($conn, $_POST["user"]);
     $comment = mysqli_real_escape_string($conn, $_POST["comment"]);
@@ -72,7 +72,7 @@ if(isset($_POST["delete_comment"])) {
 }
 
 // Add Comment
-if(isset($_POST["add_comment"])) {
+if(isset($_POST["add_comment"]) && isset($_SESSION["username"])) {
     $disc = mysqli_real_escape_string($conn, $_POST["disc"]);
     $user = mysqli_real_escape_string($conn, $_POST["user"]);
     $tagid = mysqli_real_escape_string($conn, $_POST["tagid"]);
@@ -82,7 +82,7 @@ if(isset($_POST["add_comment"])) {
 }
 
 // Remove Favoutires Function
-if(isset($_POST["remove_favourite"])) {
+if(isset($_POST["remove_favourite"]) && isset($_SESSION["username"])) {
     $disc = mysqli_real_escape_string($conn, $_POST["disc"]);
     $user = mysqli_real_escape_string($conn, $_POST["user"]);
     $conn->query("DELETE FROM `favourites` WHERE `disc`='$disc' AND `user`='$user' LIMIT 1");
@@ -90,7 +90,7 @@ if(isset($_POST["remove_favourite"])) {
 }
 
 // Add Favoutires Function
-if(isset($_POST["add_favourite"])) {
+if(isset($_POST["add_favourite"]) && isset($_SESSION["username"])) {
     $disc = mysqli_real_escape_string($conn, $_POST["disc"]);
     $user = mysqli_real_escape_string($conn, $_POST["user"]);
     $conn->query("INSERT INTO `favourites`(`disc`, `user`) VALUES('$disc','$user')");

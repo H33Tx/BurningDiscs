@@ -1,4 +1,4 @@
-<?= $error ?>
+<?php if(!isset($error)) { $error = ""; } echo $error ?>
 <div style="margin: 0 auto; width: 300px" id="login_container">
     <form method="post" id="login_form" name="login_user">
         <h1 class="text-center">Login</h1>

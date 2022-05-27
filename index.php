@@ -137,7 +137,7 @@ if($rPage=="logout") {
                         </ul>
                         <a href="<?= $url ?>login/">Login</a> or <a href="<?= $url ?>signup/">Signup</a>?
                         <?php } else { ?>
-                        Welcome, <?= $_SESSION["username"] ?>!
+                        Welcome, <?= mysqli_real_escape_string($conn, $_SESSION["username"]) ?>!
                         <ul>
                             <li><a href="<?= $url ?>user/comments/">My Comments</a></li>
                             <li><a href="<?= $url ?>user/favourites/">My Favourites</a></li>
@@ -161,7 +161,7 @@ if($rPage=="logout") {
 
     <footer class="footer">
         <p class="text-center text-muted">
-            Copyright &copy; <?= date("Y") ?> <a href="<?= $url ?>"><?= $config["name"] ?></a> | Powered by <a href="https://github.com/saintly2k/BurningDiscs" target="_blank">BurningDiscs</a> by saintly2k
+            Copyright &copy; <?= date("Y") ?> <a href="<?= $url ?>"><?= $config["name"] ?></a> | Powered by <a href="https://github.com/H33Tx/BurningDiscs" target="_blank">BurningDiscs</a> by <a href="https://github.com/saintly2k" target="_blank">saintly2k</a>
         </p>
     </footer>
 

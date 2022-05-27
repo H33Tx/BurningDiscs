@@ -1,3 +1,5 @@
+<?php if(!isset($error)) $error = ""; ?>
+
 <?php if(!empty($_SESSION["username"])) { ?>
 <?php if(empty($user_token)) { ?>
 <div class="panel panel-success">
@@ -25,7 +27,7 @@
             <div class="form-group">
                 <label class="col-sm-3 control-label">Further Description:</label>
                 <div class="col-sm-9">
-                    <textarea type="text" style="height:400px;max-width:100%" class="form-control" name="disc_desc" required maxlength="20000">Like a Songlist, from who the Songs are and from when. Maybe even File-details like Size of each song, track length, etc.</textarea>
+                    <textarea type="text" style="height:400px;max-width:100%" class="form-control" name="disc_desc" required maxlength="20000">Like a Songlist, from who the Songs are and from when. Maybe even File-details like Size of each song, track length, etc. Supports BBCode!</textarea>
                 </div>
             </div>
             <div class="form-group">

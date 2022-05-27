@@ -1,6 +1,6 @@
 <?php
 
-$query = $_GET["for"];
+$query = mysqli_real_escape_string($conn, $_GET["for"]);
 
 $dream = "SELECT * FROM `discs` WHERE (`name` LIKE '%".$query."%') LIMIT ?,?";
 
